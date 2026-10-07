@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T05:37:00.381Z",
+  "title": "Design System: RIL gallery",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "displayName": "RIL Blue",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.19 255)",
+          "oklch(26% 0.19 255)",
+          "oklch(37% 0.19 255)",
+          "oklch(48% 0.19 255)",
+          "oklch(59% 0.19 255)",
+          "oklch(70% 0.19 255)",
+          "oklch(82% 0.19 255)",
+          "oklch(95% 0.19 255)"
+        ]
+      },
+      "blue-ink": {
+        "displayName": "Reading Blue",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.16 255)",
+          "oklch(26% 0.16 255)",
+          "oklch(37% 0.16 255)",
+          "oklch(48% 0.16 255)",
+          "oklch(59% 0.16 255)",
+          "oklch(70% 0.16 255)",
+          "oklch(82% 0.16 255)",
+          "oklch(95% 0.16 255)"
+        ]
+      },
+      "ink": {
+        "displayName": "Charcoal",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "muted": {
+        "displayName": "Caption Gray",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.012 255)",
+          "oklch(26% 0.012 255)",
+          "oklch(37% 0.012 255)",
+          "oklch(48% 0.012 255)",
+          "oklch(59% 0.012 255)",
+          "oklch(70% 0.012 255)",
+          "oklch(82% 0.012 255)",
+          "oklch(95% 0.012 255)"
+        ]
+      },
+      "line": {
+        "displayName": "Divider Gray",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.012 250)",
+          "oklch(26% 0.012 250)",
+          "oklch(37% 0.012 250)",
+          "oklch(48% 0.012 250)",
+          "oklch(59% 0.012 250)",
+          "oklch(70% 0.012 250)",
+          "oklch(82% 0.012 250)",
+          "oklch(95% 0.012 250)"
+        ]
+      },
+      "surface": {
+        "displayName": "Cool Surface",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.008 250)",
+          "oklch(26% 0.008 250)",
+          "oklch(37% 0.008 250)",
+          "oklch(48% 0.008 250)",
+          "oklch(59% 0.008 250)",
+          "oklch(70% 0.008 250)",
+          "oklch(82% 0.008 250)",
+          "oklch(95% 0.008 250)"
+        ]
+      },
+      "white": {
+        "displayName": "White",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "viewer": {
+        "displayName": "Viewer Black",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(37% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(59% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Gallery introduction."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Album names."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Viewer album title."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Global reading baseline."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navigation and underlined actions."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Photo zoom and viewer entrance easing."
+      },
+      {
+        "name": "photo-zoom",
+        "value": "transform 0.6s",
+        "purpose": "Hover scale to 1.025 without layout movement."
+      },
+      {
+        "name": "affordance",
+        "value": "opacity 0.2s",
+        "purpose": "Photo expansion affordance."
+      },
+      {
+        "name": "viewer-arrive",
+        "value": "0.28s",
+        "purpose": "Dialog opacity entrance from 0.75 to 1."
+      },
+      {
+        "name": "loading-turn",
+        "value": "0.7s linear infinite",
+        "purpose": "Loading indicator rotation; reduced motion disables all animations and transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1000px"
+      },
+      {
+        "name": "mobile",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Cover Photo Action",
+      "kind": "button",
+      "refersTo": "cover-action",
+      "description": "White action label over the featured photograph.",
+      "html": "<button class=\"ds-cover\"><svg aria-hidden=\"true\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg> View photograph</button>",
+      "css": ".ds-cover{display:flex;align-items:center;gap:12px;padding:12px 18px;background:var(--white,#fff);color:var(--ink,#212120);border:0;border-radius:0;font:12px 'Open Sans',sans-serif;cursor:pointer}.ds-cover:hover{background:var(--blue-ink,#1264bd);color:var(--white,#fff)}.ds-cover:focus-visible{outline:3px solid var(--blue,#177ae5);outline-offset:5px}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Underlined action with a small directional icon.",
+      "html": "<a class=\"ds-link\" href=\"#albums\">Explore the albums <svg aria-hidden=\"true\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:44px;color:var(--ink,#212120);border-bottom:1px solid currentColor;text-decoration:none;font:600 13px 'Open Sans',sans-serif}.ds-link:hover{color:var(--blue-ink,#1264bd)}.ds-link:focus-visible{outline:3px solid var(--blue,#177ae5);outline-offset:5px}"
+    },
+    {
+      "name": "Album Navigation",
+      "kind": "nav",
+      "refersTo": "album-navigation",
+      "description": "Programme anchor with current-location marker and photo count.",
+      "html": "<nav aria-label=\"Photo albums\" class=\"ds-nav\"><a href=\"#miws\" aria-current=\"location\">MIWS <span>3</span></a><a href=\"#summer\">Kids Summer Camp <span>4</span></a></nav>",
+      "css": ".ds-nav{display:flex;background:var(--white,#fff);border-bottom:1px solid var(--line,#dce2e8);font:600 13px 'Open Sans',sans-serif}.ds-nav a{display:flex;align-items:center;gap:12px;padding:24px 28px;color:var(--ink,#212120);border-bottom:2px solid transparent;text-decoration:none}.ds-nav span{font-size:11px;font-weight:400;color:var(--muted,#62686f);font-variant-numeric:tabular-nums}.ds-nav a:hover{background:#f1f6fc}.ds-nav a[aria-current]{color:var(--blue-ink,#1264bd);border-color:var(--blue-ink,#1264bd)}.ds-nav a:focus-visible{outline:3px solid var(--blue,#177ae5);outline-offset:5px}@media(max-width:640px){.ds-nav{display:grid;grid-template-columns:1fr 1fr}.ds-nav a{min-height:52px;padding:10px 8px;font-size:11px}}"
+    },
+    {
+      "name": "Viewer Control",
+      "kind": "button",
+      "refersTo": "viewer-control",
+      "description": "Circular icon control on the dark photo viewer.",
+      "html": "<div class=\"ds-viewer\"><button class=\"ds-control\" aria-label=\"Close photo viewer\"><svg aria-hidden=\"true\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"m6 6 12 12M6 18 18 6\"/></svg></button></div>",
+      "css": ".ds-viewer{padding:16px;background:var(--viewer,#151515)}.ds-control{display:grid;place-items:center;width:48px;height:48px;padding:0;border:1px solid #62676d;border-radius:50%;background:transparent;color:var(--white,#fff);cursor:pointer;transition:background .2s,border-color .2s}.ds-control:hover{background:#353535;border-color:#d0d4d8}.ds-control:focus-visible{outline:3px solid var(--blue,#177ae5);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-control{transition:none}}"
+    },
+    {
+      "name": "Viewer Thumbnail",
+      "kind": "button",
+      "refersTo": "viewer-thumbnail",
+      "description": "Compact photo selector with white active border; sample image surface is neutral.",
+      "html": "<div class=\"ds-thumbs\"><button aria-label=\"View photograph 1\" aria-pressed=\"true\" class=\"ds-thumb\"><svg aria-hidden=\"true\" viewBox=\"0 0 64 48\" width=\"64\" height=\"48\"><rect width=\"64\" height=\"48\" fill=\"#62686f\"/><path d=\"m0 48 24-28 16 17 12-12 12 23\" fill=\"#dce2e8\"/></svg></button><button aria-label=\"View photograph 2\" aria-pressed=\"false\" class=\"ds-thumb\"></button></div>",
+      "css": ".ds-thumbs{display:flex;gap:10px;background:var(--viewer,#151515);padding:16px}.ds-thumb{position:relative;width:64px;height:48px;padding:0;background:#353535;border:2px solid transparent;border-radius:3px;overflow:hidden;opacity:.6;cursor:pointer}.ds-thumb[aria-pressed=true]{border-color:var(--white,#fff);opacity:1}.ds-thumb:hover{opacity:1}.ds-thumb:focus-visible{outline:3px solid var(--blue,#177ae5);outline-offset:5px}@media(max-width:640px){.ds-thumbs{gap:8px}.ds-thumb{width:54px;height:44px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Community photo essay",
+    "overview": "Photographs and people lead. White space, compact descriptive captions, and restrained Open Sans typography frame the supplied community images. The interface uses RIL blue for emphasis and charcoal for reading.\n\nThe material character is flat and editorial. Preserve the original horizontal RIL logo and original photographic color. The page's cover and album compositions are its current expression; reusable controls remain quiet, explicit, and keyboard accessible.",
+    "keyCharacteristics": [
+      "Unaltered community photography.",
+      "White space and blue functional emphasis.",
+      "Flat surfaces and compact captions.",
+      "Responsive editorial photo spreads."
+    ],
+    "rules": [
+      {
+        "name": "The Original Color Rule",
+        "body": "Preserve photographic color and the supplied logo; use interface color around those assets.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do use Open Sans and the supplied horizontal RIL logo.",
+      "Do keep photo colors intact and captions descriptive.",
+      "Do preserve visible keyboard focus and reduced-motion behavior.",
+      "Do use the responsive spread patterns and full-image viewer for photographic context."
+    ],
+    "donts": [
+      "Don't modify the logo with decorative effects.",
+      "Don't replace factual captions with invented event details or dates.",
+      "Don't add shadows or rounded card shells to the existing photo figures.",
+      "Don't make hover the only way to discover photo opening on mobile."
+    ]
+  }
+}

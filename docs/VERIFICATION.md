@@ -15,4 +15,11 @@ Design delivery gate: verified supplied content, source-based counts, functional
 
 Impeccable's detector was run once on the changed UI files. Its two warnings both refer to `.brand-corner`: the white top/right corner mark repeats the supplied brand's bracket motif over the hero photograph. It is an intentional square graphic, not a colored accent border on a card. No other warnings were reported.
 
-The previous plain HTML implementation is preserved outside the Next.js project in `../legacy-static` and in Git history.
+The previous plain HTML implementation is preserved in `archive/legacy/legacy-static` and in Git history.
+# Redesign verification — 7 October 2026
+
+Next.js production export and TypeScript validation passed. Impeccable detector returned no findings on changed UI files. Desktop 1440×900 and mobile 390×844 captures show all 13 photos after traversing the lazy-loaded albums. No horizontal overflow. Featured-photo viewer opens, advances, closes with Escape, and restores trigger focus. Summer album anchor settled at 103.8px under a 104.8px mobile nav. Independent finish reviewer returned **ship**, with no material visual findings; interaction verification was performed by the builder.
+
+Review evidence: `.impeccable/review/desktop.png`, `mobile.png`, and `mobile-album.png` (local, excluded from source control).
+
+Previous verification record:

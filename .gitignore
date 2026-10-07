@@ -4,3 +4,7 @@ out/
 *.tsbuildinfo
 .sites-runtime/
 next-env.d.ts
+archive/
+.impeccable/review/
+.impeccable/decision.json
+.impeccable/mocks/
