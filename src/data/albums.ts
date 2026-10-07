@@ -1,4 +1,21 @@
-export const albums = [
+import additionalPhotos from "./additional-photos.json";
+
+export type GalleryPhoto = {
+  file: string;
+  alt: string;
+  collection?: string;
+  collectionLabel?: string;
+};
+export type PhotoCollection = { id: string; label: string; source: string };
+export type Album = {
+  id: string;
+  name: string;
+  folder: string;
+  photos: GalleryPhoto[];
+  collections: PhotoCollection[];
+};
+
+const originalAlbums = [
   {
     id: "miws",
     name: "MIWS",
@@ -69,4 +86,25 @@ export const albums = [
   },
 ];
 
-export type Album = (typeof albums)[number];
+export const albums: Album[] = originalAlbums.map((album) => ({
+  ...album,
+  photos: [
+    ...album.photos.map((photo) => ({
+      ...photo,
+      collection: "original",
+      collectionLabel: "Original collection",
+      ...additionalPhotos.matches.find((match) => match.file === photo.file),
+    })),
+    ...additionalPhotos.photos.filter((photo) => photo.album === album.id),
+  ],
+  collections: [
+    {
+      id: "original",
+      label: "Original collection",
+      source: `https://drive.google.com/drive/folders/${album.folder}`,
+    },
+    ...additionalPhotos.collections.filter(
+      (collection) => collection.album === album.id,
+    ),
+  ],
+}));

@@ -18,6 +18,8 @@ Impeccable's detector was run once on the changed UI files. Its two warnings bot
 The previous plain HTML implementation is preserved in `archive/legacy/legacy-static` and in Git history.
 # Redesign verification — 7 October 2026
 
+Expanded collections: 205 source images imported successfully, seven exact visual duplicates reused, 211 unique photos verified with both full and preview files. Totals: MIWS 71, Kids Summer Camp 57, KCC 29, Hack and Chill 54. Verified Pixieset dates: Hack and Chill 22 May / 17 July 2026, MIWS 26 June 2026. June filter shows six photos initially; Show more increases to eighteen. Previous from the first June photo wraps to 68 of 68 and stays in June, with five thumbnail controls. Production build and TypeScript checks passed.
+
 Footer redesign uses the Emil Design Engineering skill. Desktop 1440×900 and mobile 390×844 were visually inspected; 320px and 390px views have no horizontal overflow. Footer navigation links measure at least 44px tall; back-to-top measures 48px. Local screenshots: `.impeccable/review/footer-desktop.png` and `footer-mobile.png`. Keyboard focus remains visible; back-to-top has instant keyboard activation and reduced-motion support.
 
 Next.js production export and TypeScript validation passed. Impeccable detector returned no findings on changed UI files. Desktop 1440×900 and mobile 390×844 captures show all 13 photos after traversing the lazy-loaded albums. No horizontal overflow. Featured-photo viewer opens, advances, closes with Escape, and restores trigger focus. Summer album anchor settled at 103.8px under a 104.8px mobile nav. Independent finish reviewer returned **ship**, with no material visual findings; interaction verification was performed by the builder.

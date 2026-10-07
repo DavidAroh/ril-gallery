@@ -12,13 +12,13 @@ Next.js and TypeScript, explicitly requested by the user. Static export.
 A single page presenting Renaissance Innovation Labs' community photographs. The user confirmed that people and photographs should lead the redesign.
 
 ## Capabilities and Constraints
-Keep the four distinct albums: MIWS, Kids Summer Camp, KCC, Hack and Chill. Preserve all 13 supplied photographs, original Drive album links, and keyboard-accessible enlarged viewing. Keep source code organized into app, gallery components, UI components, and data.
+Keep the four distinct albums: MIWS, Kids Summer Camp, KCC, Hack and Chill. Preserve supplied photographs, original source links, and keyboard-accessible enlarged viewing. The gallery contains 211 unique photos after importing 205 additional source photos and reusing seven existing duplicates. Collections filter by verified month or original folder grouping; browsing loads progressively. Keep source code organized into app, gallery components, UI components, and data.
 
 ## Brand Commitments
 Use the supplied RIL media kit: Open Sans, primary blue #177AE5, charcoal #212120, white, and the original horizontal logo without decorative modifications.
 
 ## Evidence on Hand
-User's PDF at C:/Users/ghost/Downloads/RIL Media kit.pdf.pdf. Supplied images stored in public/assets; factual album content in src/data/albums.ts. RIL is a tech hub in Port Harcourt, Nigeria. No event dates or expanded acronym names have been supplied.
+User's PDF at C:/Users/ghost/Downloads/RIL Media kit.pdf.pdf. Supplied images stored in public/assets; factual album content in src/data/albums.ts and additional-photos.json. Source provenance is in docs/PHOTO-SOURCES.json. Pixieset confirms Hack and Chill on 22 May and 17 July 2026, and MIWS on 26 June 2026. Kids Summer Camp groups retain their supplied folder names. RIL is a tech hub in Port Harcourt, Nigeria. Expanded acronym names have not been supplied.
 
 ## Users
 Inferred from the brief: community members and visitors browsing the people and activities at RIL.

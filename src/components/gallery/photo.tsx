@@ -8,6 +8,7 @@ type PhotoProps = {
   alt: string;
   sizes: string;
   priority?: boolean;
+  thumbnail?: boolean;
   onLoad?: () => void;
 };
 
@@ -16,6 +17,7 @@ export function Photo({
   alt,
   sizes,
   priority = false,
+  thumbnail = false,
   onLoad,
 }: PhotoProps) {
   const [failed, setFailed] = useState(false);
@@ -32,7 +34,7 @@ export function Photo({
 
   return (
     <Image
-      src={`/assets/${file}.webp`}
+      src={`/assets/${file}${thumbnail ? "-thumb" : ""}.webp`}
       alt={alt}
       fill
       sizes={sizes}

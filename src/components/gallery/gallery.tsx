@@ -11,7 +11,21 @@ export function Gallery() {
   const [selection, setSelection] = useState<PhotoSelection | null>(null);
   const [activeAlbum, setActiveAlbum] = useState("miws");
   const [loading, setLoading] = useState(false);
+  const [filters, setFilters] = useState<Record<string, string>>({});
+  const [visibleCounts, setVisibleCounts] = useState<Record<string, number>>(
+    {},
+  );
   const selectedAlbum = selection ? albums[selection.albumIndex] : null;
+  const photoIndices = selectedAlbum
+    ? selectedAlbum.photos
+        .map((photo, index) => ({ photo, index }))
+        .filter(
+          ({ photo }) =>
+            !filters[selectedAlbum.id] ||
+            photo.collection === filters[selectedAlbum.id],
+        )
+        .map(({ index }) => index)
+    : [];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,6 +45,12 @@ export function Gallery() {
   }, []);
 
   function openPhoto(albumIndex: number, photoIndex: number) {
+    const album = albums[albumIndex];
+    if (
+      filters[album.id] &&
+      album.photos[photoIndex].collection !== filters[album.id]
+    )
+      setFilters({ ...filters, [album.id]: "" });
     setLoading(true);
     setSelection({ albumIndex, photoIndex });
   }
@@ -40,8 +60,12 @@ export function Gallery() {
     setSelection({
       ...selection,
       photoIndex:
-        (selection.photoIndex + step + selectedAlbum.photos.length) %
-        selectedAlbum.photos.length,
+        photoIndices[
+          (photoIndices.indexOf(selection.photoIndex) +
+            step +
+            photoIndices.length) %
+            photoIndices.length
+        ],
     });
   }
 
@@ -109,58 +133,136 @@ export function Gallery() {
           ))}
         </nav>
         <div className="album-spreads page-width">
-          {albums.map((album, albumIndex) => (
-            <section
-              className={`album album-${album.id}`}
-              id={album.id}
-              key={album.id}
-              aria-labelledby={`${album.id}-title`}
-            >
-              <div className="album-heading">
-                <h3 id={`${album.id}-title`}>{album.name}</h3>
-                <div className="album-details">
-                  <span>{album.photos.length} photographs</span>
-                  <a
-                    href={`https://drive.google.com/drive/folders/${album.folder}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+          {albums.map((album, albumIndex) => {
+            const filteredPhotos = album.photos
+              .map((photo, index) => ({ photo, index }))
+              .filter(
+                ({ photo }) =>
+                  !filters[album.id] || photo.collection === filters[album.id],
+              );
+            const visibleCount = visibleCounts[album.id] || 6;
+            return (
+              <section
+                className={`album album-${album.id}`}
+                id={album.id}
+                key={album.id}
+                aria-labelledby={`${album.id}-title`}
+              >
+                <div className="album-heading">
+                  <h3 id={`${album.id}-title`}>{album.name}</h3>
+                  <div className="album-details">
+                    <span>{album.photos.length} photographs</span>
+                    <details className="source-links">
+                      <summary>Original collections</summary>
+                      <div>
+                        {album.collections.map((collection) => (
+                          <a
+                            href={collection.source}
+                            key={collection.id}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {collection.label}
+                          </a>
+                        ))}
+                      </div>
+                    </details>
+                  </div>
+                </div>
+                <div
+                  className="collection-filters"
+                  role="group"
+                  aria-label={`${album.name} collections`}
+                >
+                  <button
+                    aria-pressed={!filters[album.id]}
+                    onClick={() => {
+                      setFilters({ ...filters, [album.id]: "" });
+                      setVisibleCounts({ ...visibleCounts, [album.id]: 6 });
+                    }}
                   >
-                    Open original album
-                  </a>
-                </div>
-              </div>
-              {album.photos.length ? (
-                <div className="photo-grid">
-                  {album.photos.map((photo, photoIndex) => (
-                    <figure className="photo-figure" key={photo.file}>
+                    All photos
+                  </button>
+                  {album.collections
+                    .filter((collection) =>
+                      album.photos.some(
+                        (photo) => photo.collection === collection.id,
+                      ),
+                    )
+                    .map((collection) => (
                       <button
-                        className="photo-button"
-                        key={photo.file}
-                        onClick={() => openPhoto(albumIndex, photoIndex)}
-                        aria-label={`View ${album.name} photograph ${photoIndex + 1}`}
+                        key={collection.id}
+                        aria-pressed={filters[album.id] === collection.id}
+                        onClick={() => {
+                          setFilters({ ...filters, [album.id]: collection.id });
+                          setVisibleCounts({ ...visibleCounts, [album.id]: 6 });
+                        }}
                       >
-                        <Photo
-                          file={photo.file}
-                          alt={photo.alt}
-                          sizes="(max-width: 640px) 90vw, (max-width: 1000px) 45vw, 600px"
-                        />
-                        <span className="photo-open" aria-hidden="true">
-                          <Icon name="expand" />
-                        </span>
+                        {collection.label}
                       </button>
-                      <figcaption>{photo.alt}</figcaption>
-                    </figure>
-                  ))}
+                    ))}
                 </div>
-              ) : (
-                <p className="empty-album">No photos in this album yet.</p>
-              )}
-            </section>
-          ))}
+                {filteredPhotos.length ? (
+                  <div className="photo-grid">
+                    {filteredPhotos
+                      .slice(0, visibleCount)
+                      .map(({ photo, index: photoIndex }) => (
+                        <figure className="photo-figure" key={photo.file}>
+                          <button
+                            className="photo-button"
+                            key={photo.file}
+                            onClick={() => openPhoto(albumIndex, photoIndex)}
+                            aria-label={`View ${album.name} photograph ${photoIndex + 1}`}
+                          >
+                            <Photo
+                            thumbnail={photoIndex !== filteredPhotos[0].index}
+                              file={photo.file}
+                              alt={photo.alt}
+                              sizes="(max-width: 640px) 90vw, (max-width: 1000px) 45vw, 600px"
+                            />
+                            <span className="photo-open" aria-hidden="true">
+                              <Icon name="expand" />
+                            </span>
+                          </button>
+                          <figcaption>
+                            {photo.collectionLabel !==
+                              "Original collection" && (
+                              <span className="photo-collection-label">
+                                {photo.collectionLabel}
+                              </span>
+                            )}
+                            {photo.alt}
+                          </figcaption>
+                        </figure>
+                      ))}
+                  </div>
+                ) : (
+                  <p className="empty-album">No photos in this album yet.</p>
+                )}
+                {filteredPhotos.length > visibleCount && (
+                  <button
+                    className="load-more"
+                    onClick={() =>
+                      setVisibleCounts({
+                        ...visibleCounts,
+                        [album.id]: visibleCount + 12,
+                      })
+                    }
+                  >
+                    Show more photos{" "}
+                    <span>
+                      {filteredPhotos.length - visibleCount} remaining
+                    </span>
+                  </button>
+                )}
+              </section>
+            );
+          })}
         </div>
       </section>
       <PhotoViewer
         selection={selection}
+        photoIndices={photoIndices}
         loading={loading}
         onClose={() => setSelection(null)}
         onMove={movePhoto}

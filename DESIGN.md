@@ -169,6 +169,8 @@ Underlined actions have a (44px) minimum height and optional small inline arrow.
 
 ### Photo Viewer
 
+Month and folder filters use 44px pills with Reading Blue for the selected state. Each programme initially renders six photos; Show more adds twelve at a time. Large lead images use the full asset while supporting images use 480px previews. A native details disclosure links all original collections. The viewer stays within the selected collection, uses full images, and shows a moving five-thumbnail window. Mobile thumbnails are 48px wide to fit narrow viewports.
+
 The viewer offers previous/next buttons, thumbnail selection, photo count, caption, and close control. Arrow keys move within the selected album; Escape closes the dialog and focus returns to the invoking control. The active thumbnail has a white border and full opacity; others use (0.6) opacity. Loading uses a small rotating indicator; failure text occupies the image surface.
 
 ### Footer

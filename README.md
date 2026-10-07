@@ -1,6 +1,6 @@
 # RIL Community Gallery
 
-One-page Next.js App Router gallery, refined using the Impeccable design skill and the supplied RIL Media kit. All 13 photographs from the four shared image folders are included as WebP files. Video folders are linked through each original programme album, but videos are not embedded.
+One-page Next.js App Router gallery using the supplied RIL Media kit. Includes 211 unique photos across MIWS, Kids Summer Camp, KCC, and Hack and Chill. Pixieset collections retain their verified months; Kids Summer Camp retains its folder groups. Month filters, progressive browsing, and a keyboard-accessible viewer keep larger collections manageable. Photos and smaller grid previews are self-hosted as WebP files. Videos are not embedded.
 
 ## Preview
 
