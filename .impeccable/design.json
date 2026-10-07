@@ -218,14 +218,6 @@
       "description": "Compact photo selector with white active border; sample image surface is neutral.",
       "html": "<div class=\"ds-thumbs\"><button aria-label=\"View photograph 1\" aria-pressed=\"true\" class=\"ds-thumb\"><svg aria-hidden=\"true\" viewBox=\"0 0 64 48\" width=\"64\" height=\"48\"><rect width=\"64\" height=\"48\" fill=\"#62686f\"/><path d=\"m0 48 24-28 16 17 12-12 12 23\" fill=\"#dce2e8\"/></svg></button><button aria-label=\"View photograph 2\" aria-pressed=\"false\" class=\"ds-thumb\"></button></div>",
       "css": ".ds-thumbs{display:flex;gap:10px;background:var(--viewer,#151515);padding:16px}.ds-thumb{position:relative;width:64px;height:48px;padding:0;background:#353535;border:2px solid transparent;border-radius:3px;overflow:hidden;opacity:.6;cursor:pointer}.ds-thumb[aria-pressed=true]{border-color:var(--white,#fff);opacity:1}.ds-thumb:hover{opacity:1}.ds-thumb:focus-visible{outline:3px solid var(--blue,#177ae5);outline-offset:5px}@media(max-width:640px){.ds-thumbs{gap:8px}.ds-thumb{width:54px;height:44px}}"
-    },
-    {
-      "name": "Footer Back to Top",
-      "kind": "button",
-      "refersTo": "footer-top-icon",
-      "description": "44px blue circular control with 160ms fine-pointer feedback and stationary keyboard focus.",
-      "html": "<a class=\"ds-footer-top\" href=\"#top\"><span>Back to top</span><span class=\"ds-footer-circle\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M12 20V4m-6 6 6-6 6 6\"/></svg></span></a>",
-      "css": ".ds-footer-top{display:inline-flex;align-items:center;gap:14px;min-height:48px;color:#212120;font:600 12px Open Sans,sans-serif;text-decoration:none}.ds-footer-circle{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#1264bd;color:#fff;transition:transform 160ms cubic-bezier(.23,1,.32,1)}.ds-footer-top:focus-visible{outline:3px solid #177ae5;outline-offset:5px}.ds-footer-top:focus-visible .ds-footer-circle{transform:none;transition:none}@media(hover:hover) and (pointer:fine){.ds-footer-top:hover .ds-footer-circle{transform:translateY(-2px)}.ds-footer-top:active:not(:focus-visible) .ds-footer-circle{transform:scale(.97)}}@media(prefers-reduced-motion:reduce){.ds-footer-circle{transition:none;transform:none!important}}"
     }
   ],
   "narrative": {

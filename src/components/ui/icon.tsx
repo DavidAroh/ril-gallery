@@ -8,7 +8,9 @@ type IconName =
   | "expand"
   | "down"
   | "up"
-  | "external";
+  | "external"
+  | "instagram"
+  | "x";
 
 export function Icon({
   name,
@@ -25,6 +27,14 @@ export function Icon({
     down: <path d="M12 4v16m-6-6 6 6 6-6" />,
     up: <path d="M12 20V4m-6 6 6-6 6 6" />,
     external: <path d="M6 18 18 6M6 6h12v12" />,
+    instagram: (
+      <>
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+      </>
+    ),
+    x: <path d="M4 3h4l12 18h-4L4 3Zm16 0L4 21" />,
   };
   return (
     <svg

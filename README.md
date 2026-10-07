@@ -39,7 +39,7 @@ ril gallery/
 
 Add photos to `public/assets` and update `src/data/albums.ts`. Import source modules using `@/`, which maps to `src/`.
 
-The footer lives in `src/components/site-footer.tsx`, with keyboard-aware back-to-top behavior in `src/components/ui/back-to-top.tsx`.
+The footer lives in `src/components/site-footer.tsx`. Social SVG icons live in `src/components/ui/icon.tsx`.
 
 `node_modules`, `.next`, and `out` are generated dependency, cache, and build directories; they are excluded from Git. The previous static implementation and media-processing files are preserved in `archive`, not used by the Next.js application.
 

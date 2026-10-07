@@ -76,12 +76,6 @@ components:
     rounded: "{rounded.thumbnail}"
     width: "64px"
     height: "48px"
-  footer-top-icon:
-    backgroundColor: "{colors.blue-ink}"
-    textColor: "{colors.white}"
-    rounded: "{rounded.circular}"
-    width: "44px"
-    height: "44px"
 ---
 
 # Design System: RIL gallery
@@ -179,9 +173,7 @@ The viewer offers previous/next buttons, thumbnail selection, photo count, capti
 
 ### Footer
 
-The white footer uses a three-column grid: the original logo and location, album navigation, and external community links. Desktop spacing is 64px above and between groups, with 52px below. Below 640px the brand occupies a full row and the link groups share two columns with a 24px gap. Every link has a minimum 44px hit area. A thin divider separates the lower sign-off and back-to-top control.
-
-The back-to-top icon sits in a 44px Reading Blue circle. Fine-pointer hover lifts it 2px; press scales it to 0.97 over 160ms with `cubic-bezier(0.23, 1, 0.32, 1)`. Keyboard focus keeps the icon stationary; keyboard activation jumps instantly and returns focus to the header home link. Reduced motion suppresses movement. External arrows clarify links that open another tab.
+The white footer uses a three-column grid: the original logo and location, album navigation, and community links. Below 640px the brand occupies a full row and the link groups share two columns. Links have at least 44px hit areas. Instagram and X are icon-only circular links with accessible names and 20px SVG marks; Visit RIL retains its text and external arrow. Social controls have fine-pointer hover feedback and subtle press feedback, disabled for reduced motion. There is no bottom sign-off or back-to-top row.
 
 ## Do's and Don'ts
 

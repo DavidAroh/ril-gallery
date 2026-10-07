@@ -1,13 +1,15 @@
 import Image from "next/image";
 import { albums } from "@/data/albums";
 import { Icon } from "@/components/ui/icon";
-import { BackToTop } from "@/components/ui/back-to-top";
 
 const connections = [
-  { name: "Visit RIL", url: "https://www.renaissancelabs.org/" },
-  { name: "Instagram", url: "https://www.instagram.com/RxlabsHQ" },
-  { name: "X / Twitter", url: "https://www.twitter.com/RxlabsHQ" },
-];
+  {
+    name: "Instagram",
+    icon: "instagram",
+    url: "https://www.instagram.com/RxlabsHQ",
+  },
+  { name: "X / Twitter", icon: "x", url: "https://www.twitter.com/RxlabsHQ" },
+] as const;
 
 export function SiteFooter() {
   return (
@@ -43,22 +45,29 @@ export function SiteFooter() {
             aria-labelledby="footer-connect-title"
           >
             <h2 id="footer-connect-title">Keep in touch</h2>
-            {connections.map((connection) => (
-              <a
-                href={connection.url}
-                key={connection.name}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span>{connection.name}</span>
-                <Icon name="external" />
-              </a>
-            ))}
+            <a
+              href="https://www.renaissancelabs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Visit RIL</span>
+              <Icon name="external" />
+            </a>
+            <div className="footer-socials">
+              {connections.map((connection) => (
+                <a
+                  href={connection.url}
+                  key={connection.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={connection.name}
+                  title={connection.name}
+                >
+                  <Icon name={connection.icon} />
+                </a>
+              ))}
+            </div>
           </nav>
-        </div>
-        <div className="footer-bottom">
-          <span>Renaissance Innovation Labs</span>
-          <BackToTop />
         </div>
       </div>
     </footer>
