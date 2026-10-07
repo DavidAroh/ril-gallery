@@ -124,7 +124,6 @@ export function Gallery() {
               aria-current={activeAlbum === album.id ? "location" : undefined}
               onClick={() => setActiveAlbum(album.id)}
             >
-              <Icon name="folder" />
               <span>{album.name}</span>
               <span
                 className="album-count"
