@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { albums } from "@/data/albums";
+import photoDimensions from "@/data/photo-dimensions.json";
+
+const dimensions: Record<string, number[]> = photoDimensions;
 import { Icon } from "@/components/ui/icon";
 import { Photo } from "./photo";
 import { PhotoViewer } from "./photo-viewer";
@@ -210,27 +213,22 @@ export function Gallery() {
                         <figure className="photo-figure" key={photo.file}>
                           <button
                             className="photo-button"
+                            style={{ aspectRatio: dimensions[photo.file].join(" / ") }}
                             key={photo.file}
                             onClick={() => openPhoto(albumIndex, photoIndex)}
                             aria-label={`View ${album.name} photograph ${photoIndex + 1}`}
                           >
                             <Photo
-                            thumbnail={photoIndex !== filteredPhotos[0].index}
+                              thumbnail={photoIndex !== filteredPhotos[0].index}
                               file={photo.file}
                               alt={photo.alt}
-                              sizes="(max-width: 640px) 90vw, (max-width: 1000px) 45vw, 600px"
+                              sizes="(max-width: 640px) 45vw, (max-width: 1000px) 45vw, 420px"
                             />
                             <span className="photo-open" aria-hidden="true">
                               <Icon name="expand" />
                             </span>
                           </button>
                           <figcaption>
-                            {photo.collectionLabel !==
-                              "Original collection" && (
-                              <span className="photo-collection-label">
-                                {photo.collectionLabel}
-                              </span>
-                            )}
                             {photo.alt}
                           </figcaption>
                         </figure>
