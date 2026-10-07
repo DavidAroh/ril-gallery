@@ -18,6 +18,8 @@ Impeccable's detector was run once on the changed UI files. Its two warnings bot
 The previous plain HTML implementation is preserved in `archive/legacy/legacy-static` and in Git history.
 # Redesign verification — 7 October 2026
 
+Footer redesign uses the Emil Design Engineering skill. Desktop 1440×900 and mobile 390×844 were visually inspected; 320px and 390px views have no horizontal overflow. Footer navigation links measure at least 44px tall; back-to-top measures 48px. Local screenshots: `.impeccable/review/footer-desktop.png` and `footer-mobile.png`. Keyboard focus remains visible; back-to-top has instant keyboard activation and reduced-motion support.
+
 Next.js production export and TypeScript validation passed. Impeccable detector returned no findings on changed UI files. Desktop 1440×900 and mobile 390×844 captures show all 13 photos after traversing the lazy-loaded albums. No horizontal overflow. Featured-photo viewer opens, advances, closes with Escape, and restores trigger focus. Summer album anchor settled at 103.8px under a 104.8px mobile nav. Independent finish reviewer returned **ship**, with no material visual findings; interaction verification was performed by the builder.
 
 Review evidence: `.impeccable/review/desktop.png`, `mobile.png`, and `mobile-album.png` (local, excluded from source control).

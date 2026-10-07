@@ -1,7 +1,14 @@
 import type { SVGProps } from "react";
 
 type IconName =
-  "folder" | "close" | "previous" | "next" | "expand" | "down" | "up";
+  | "folder"
+  | "close"
+  | "previous"
+  | "next"
+  | "expand"
+  | "down"
+  | "up"
+  | "external";
 
 export function Icon({
   name,
@@ -17,6 +24,7 @@ export function Icon({
     expand: <path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6" />,
     down: <path d="M12 4v16m-6-6 6 6 6-6" />,
     up: <path d="M12 20V4m-6 6 6-6 6 6" />,
+    external: <path d="M6 18 18 6M6 6h12v12" />,
   };
   return (
     <svg

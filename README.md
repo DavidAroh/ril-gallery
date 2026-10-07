@@ -39,6 +39,8 @@ ril gallery/
 
 Add photos to `public/assets` and update `src/data/albums.ts`. Import source modules using `@/`, which maps to `src/`.
 
+The footer lives in `src/components/site-footer.tsx`, with keyboard-aware back-to-top behavior in `src/components/ui/back-to-top.tsx`.
+
 `node_modules`, `.next`, and `out` are generated dependency, cache, and build directories; they are excluded from Git. The previous static implementation and media-processing files are preserved in `archive`, not used by the Next.js application.
 
 Fonts are self-hosted through `next/font/local`. Images use `next/image` with fixed layout containers and lazy loading. The logo was extracted directly from page 15 of the provided media kit. Original album links, website, and social accounts come from the user's Drive folder and media kit.

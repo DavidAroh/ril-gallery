@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Gallery } from "@/components/gallery/gallery";
-import { Icon } from "@/components/ui/icon";
+import { SiteFooter } from "@/components/site-footer";
 
 export default function Home() {
   return (
@@ -65,29 +65,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="site-footer page-width">
-        <span>Renaissance Innovation Labs</span>
-        <nav aria-label="Footer navigation">
-          <a
-            href="https://www.instagram.com/RxlabsHQ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
-          <a
-            href="https://www.twitter.com/RxlabsHQ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            X / Twitter
-          </a>
-          <a href="#top">
-            Back to top <Icon name="up" />
-          </a>
-        </nav>
-        <span className="footer-note">Collaboration. Community. Growth.</span>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
