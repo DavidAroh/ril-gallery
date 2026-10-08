@@ -185,7 +185,7 @@ export function Gallery() {
                       setVisibleCounts({ ...visibleCounts, [album.id]: 6 });
                     }}
                   >
-                    All photos & videos
+                    {albumVideos[album.id]?.length ? "All photos & videos" : "All photos"}
                   </button>
                   {album.collections
                     .filter((collection) =>
@@ -212,31 +212,31 @@ export function Gallery() {
                       .slice(0, visibleCount)
                       .map(({ photo, index: photoIndex }, position) => (
                         <Fragment key={photo.file}>
-                        <figure className="photo-figure" key={photo.file}>
-                          <button
-                            className="photo-button"
-                            style={{ aspectRatio: dimensions[photo.file].join(" / ") }}
-                            key={photo.file}
-                            onClick={() => openPhoto(albumIndex, photoIndex)}
-                            aria-label={`View ${album.name} photograph ${photoIndex + 1}`}
-                          >
-                            <Photo
-                              thumbnail={photoIndex !== filteredPhotos[0].index}
-                              file={photo.file}
-                              alt={photo.alt}
-                              sizes="(max-width: 640px) 45vw, (max-width: 1000px) 45vw, 420px"
-                            />
-                            <span className="photo-open" aria-hidden="true">
-                              <Icon name="expand" />
-                            </span>
-                          </button>
-                          <figcaption>
-                            {photo.alt}
-                          </figcaption>
-                        </figure>
-                        {!filters[album.id] && position % 3 === 0 && albumVideos[album.id]?.[position / 3] && (
-                          <AlbumVideo video={albumVideos[album.id][position / 3]} />
-                        )}
+                          <figure className="photo-figure" key={photo.file}>
+                            <button
+                              className="photo-button"
+                              style={{ aspectRatio: dimensions[photo.file].join(" / ") }}
+                              key={photo.file}
+                              onClick={() => openPhoto(albumIndex, photoIndex)}
+                              aria-label={`View ${album.name} photograph ${photoIndex + 1}`}
+                            >
+                              <Photo
+                                thumbnail={photoIndex !== filteredPhotos[0].index}
+                                file={photo.file}
+                                alt={photo.alt}
+                                sizes="(max-width: 640px) 45vw, (max-width: 1000px) 45vw, 420px"
+                              />
+                              <span className="photo-open" aria-hidden="true">
+                                <Icon name="expand" />
+                              </span>
+                            </button>
+                            <figcaption>
+                              {photo.alt}
+                            </figcaption>
+                          </figure>
+                          {!filters[album.id] && position % 3 === 0 && albumVideos[album.id]?.[position / 3] && (
+                            <AlbumVideo video={albumVideos[album.id][position / 3]} />
+                          )}
                         </Fragment>
                       ))}
                   </div>

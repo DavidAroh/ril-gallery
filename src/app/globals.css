@@ -216,7 +216,9 @@ h3 {
 }
 .album-nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  scrollbar-width: thin;
   gap: 0;
   position: sticky;
   top: 0;
@@ -227,6 +229,8 @@ h3 {
 }
 .album-nav a {
   display: flex;
+  flex: 0 0 auto;
+  white-space: nowrap;
   align-items: center;
   gap: 12px;
   padding: 24px 28px;
@@ -622,8 +626,7 @@ h3 {
     margin-top: 4px;
   }
   .album-nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     padding-inline: 12px;
   }
   .album-nav a {

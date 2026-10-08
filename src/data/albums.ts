@@ -84,6 +84,36 @@ const originalAlbums = [
       },
     ],
   },
+  {
+    id: "demo",
+    name: "Demo Day",
+    folder: "1tart3F1fZRN4i8gbxaeIQFRra3JBg1Dj",
+    photos: [],
+  },
+  {
+    id: "friday-play",
+    name: "Friday Play It",
+    folder: "1cIlTpxi2YUNw6DUjj8p49PubYi1VMrH2",
+    photos: [],
+  },
+  {
+    id: "nacos",
+    name: "NACOS",
+    folder: "1FHjveeMCGq6-0QC0UiaQyhSXO9czrTNa",
+    photos: [],
+  },
+  {
+    id: "powerpoint",
+    name: "PowerPoint Friday",
+    folder: "1JT4LmKk5fnxKmvrE9pb6vvYWbmJ4-HpA",
+    photos: [],
+  },
+  {
+    id: "seeess",
+    name: "SEEESS Event",
+    folder: "1xOk_3q_o1kSxUpQcmufUN9oH1Fl7aq2l",
+    photos: [],
+  },
 ];
 
 export const albums: Album[] = originalAlbums.map((album) => ({
@@ -98,11 +128,13 @@ export const albums: Album[] = originalAlbums.map((album) => ({
     ...additionalPhotos.photos.filter((photo) => photo.album === album.id),
   ],
   collections: [
-    {
-      id: "original",
-      label: "Original collection",
-      source: `https://drive.google.com/drive/folders/${album.folder}`,
-    },
+    ...(album.photos.length
+      ? [{
+          id: "original",
+          label: "Original collection",
+          source: `https://drive.google.com/drive/folders/${album.folder}`,
+        }]
+      : []),
     ...additionalPhotos.collections.filter(
       (collection) => collection.album === album.id,
     ),

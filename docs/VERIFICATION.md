@@ -27,3 +27,10 @@ Next.js production export and TypeScript validation passed. Impeccable detector 
 Review evidence: `.impeccable/review/desktop.png`, `mobile.png`, and `mobile-album.png` (local, excluded from source control).
 
 Previous verification record:
+
+
+# Expanded Drive collections — 8 October 2026
+
+Scanned the nine supplied Drive roots and their event-photo subfolders, including paginated listings. Found 578 source images, imported 423 new unique photos, and skipped 155 duplicates. All downloads succeeded. The gallery now contains 634 photos: MIWS 134, Kids Summer Camp 129, KCC 29, Hack and Chill 71, Demo Day 98, Friday Play It 36, NACOS 5, PowerPoint Friday 41, SEEESS Event 91. Every photo has a full WebP, smaller preview, and dimension metadata; references are unique. Source records and reused image mappings are retained in PHOTO-SOURCES.json.
+
+Production build passed with TypeScript validation. Local browser checks at 1440px and 320px confirmed nine album links, horizontal album navigation, and no page-level horizontal overflow. Demo Day September filtering showed six images initially and eighteen after Show more. Its first photo opened the viewer at 1 of 35; closing returned to the gallery. Existing embedded videos remain mixed among photos in the default view. Desktop evidence: .impeccable/review/new-albums.png.

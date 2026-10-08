@@ -1,6 +1,6 @@
 # RIL Community Gallery
 
-One-page Next.js App Router gallery using the supplied RIL Media kit. Includes 211 unique photos across MIWS, Kids Summer Camp, KCC, and Hack and Chill. Pixieset collections retain their verified months; Kids Summer Camp retains its folder groups. Month filters, progressive browsing, and a keyboard-accessible viewer keep larger collections manageable. Photos and smaller grid previews are self-hosted as WebP files. Videos are not embedded.
+One-page Next.js App Router gallery using the supplied RIL Media kit. Includes 634 unique photos across MIWS, Kids Summer Camp, KCC, Hack and Chill, Demo Day, Friday Play It, NACOS, PowerPoint Friday, and SEEESS Event. Date and folder filters distinguish collections, including MIWS August, camp graduation, and Demo Day July and September. Five Streamable videos are mixed among the photos in the default album view. Progressive browsing and a keyboard-accessible photo viewer keep larger collections manageable. Photos and smaller grid previews are self-hosted as WebP files.
 
 ## Preview
 
@@ -37,7 +37,7 @@ ril gallery/
 └── package-lock.json
 ```
 
-Add photos to `public/assets` and update `src/data/albums.ts`. Import source modules using `@/`, which maps to `src/`.
+Add photos and matching previews to `public/assets`, update `src/data/additional-photos.json` and `src/data/photo-dimensions.json`, and register new albums in `src/data/albums.ts`. Video sources live in `src/data/videos.ts`. Import source modules using `@/`, which maps to `src/`.
 
 The footer lives in `src/components/site-footer.tsx`. Social SVG icons live in `src/components/ui/icon.tsx`.
 
