@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import { albums } from "@/data/albums";
 import photoDimensions from "@/data/photo-dimensions.json";
-
-const dimensions: Record<string, number[]> = photoDimensions;
 import { Icon } from "@/components/ui/icon";
+import { AlbumVideos } from "./album-videos";
 import { Photo } from "./photo";
 import { PhotoViewer } from "./photo-viewer";
 import type { PhotoSelection } from "./types";
+
+const dimensions: Record<string, number[]> = photoDimensions;
 
 export function Gallery() {
   const [selection, setSelection] = useState<PhotoSelection | null>(null);
@@ -171,6 +172,7 @@ export function Gallery() {
                     </details>
                   </div>
                 </div>
+                <AlbumVideos albumId={album.id} />
                 <div
                   className="collection-filters"
                   role="group"

@@ -293,6 +293,43 @@ h3 {
   gap: 32px 24px;
   align-items: start;
 }
+.album-videos {
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+}
+.album-videos h4 {
+  margin: 0 0 18px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 280px));
+  gap: 24px;
+}
+.video-grid iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: 0;
+  background: var(--surface);
+}
+.video-grid figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.video-grid a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 12px;
+  text-decoration: underline;
+}
+.video-grid a:hover {
+  color: var(--blue-ink);
+}
 .photo-button {
   position: relative;
   display: block;
