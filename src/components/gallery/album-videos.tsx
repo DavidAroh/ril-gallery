@@ -1,33 +1,21 @@
-import { albumVideos } from "@/data/videos";
+import type { GalleryVideo } from "@/data/videos";
 
-export function AlbumVideos({ albumId }: { albumId: string }) {
-  const videos = albumVideos[albumId];
-  if (!videos?.length) return null;
-
+export function AlbumVideo({ video }: { video: GalleryVideo }) {
   return (
-    <section className="album-videos" aria-labelledby={`${albumId}-videos-title`}>
-      <h4 id={`${albumId}-videos-title`}>Videos</h4>
-      <div className="video-grid">
-        {videos.map((video) => (
-          <figure key={video.id}>
-            <iframe
-              src={`https://streamable.com/e/${video.id}`}
-              title={`${video.title} video`}
-              loading="lazy"
-              allow="fullscreen; picture-in-picture"
-              allowFullScreen
-            />
-            <figcaption>{video.title}</figcaption>
-            <a
-              href={`https://streamable.com/${video.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Watch on Streamable
-            </a>
-          </figure>
-        ))}
-      </div>
-    </section>
+    <figure className="photo-figure video-figure">
+      <iframe
+        src={`https://streamable.com/e/${video.id}`}
+        title={`${video.title} video`}
+        loading="lazy"
+        allow="fullscreen; picture-in-picture"
+        allowFullScreen
+      />
+      <figcaption>
+        {video.title} · Video
+        <a href={`https://streamable.com/${video.id}`} target="_blank" rel="noopener noreferrer">
+          Watch on Streamable
+        </a>
+      </figcaption>
+    </figure>
   );
 }

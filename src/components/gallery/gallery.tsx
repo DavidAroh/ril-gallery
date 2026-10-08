@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { albums } from "@/data/albums";
 import photoDimensions from "@/data/photo-dimensions.json";
 import { Icon } from "@/components/ui/icon";
-import { AlbumVideos } from "./album-videos";
+import { AlbumVideo } from "./album-videos";
+import { albumVideos } from "@/data/videos";
 import { Photo } from "./photo";
 import { PhotoViewer } from "./photo-viewer";
 import type { PhotoSelection } from "./types";
@@ -172,7 +173,6 @@ export function Gallery() {
                     </details>
                   </div>
                 </div>
-                <AlbumVideos albumId={album.id} />
                 <div
                   className="collection-filters"
                   role="group"
@@ -185,7 +185,7 @@ export function Gallery() {
                       setVisibleCounts({ ...visibleCounts, [album.id]: 6 });
                     }}
                   >
-                    All photos
+                    All photos & videos
                   </button>
                   {album.collections
                     .filter((collection) =>
@@ -210,7 +210,8 @@ export function Gallery() {
                   <div className="photo-grid">
                     {filteredPhotos
                       .slice(0, visibleCount)
-                      .map(({ photo, index: photoIndex }) => (
+                      .map(({ photo, index: photoIndex }, position) => (
+                        <Fragment key={photo.file}>
                         <figure className="photo-figure" key={photo.file}>
                           <button
                             className="photo-button"
@@ -233,6 +234,10 @@ export function Gallery() {
                             {photo.alt}
                           </figcaption>
                         </figure>
+                        {!filters[album.id] && position % 3 === 0 && albumVideos[album.id]?.[position / 3] && (
+                          <AlbumVideo video={albumVideos[album.id][position / 3]} />
+                        )}
+                        </Fragment>
                       ))}
                   </div>
                 ) : (
