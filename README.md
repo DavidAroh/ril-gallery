@@ -1,6 +1,6 @@
 # RIL Community Gallery
 
-One-page Next.js App Router gallery using the supplied RIL Media kit. Includes 634 unique photos across MIWS, Kids Summer Camp, KCC, Hack and Chill, Demo Day, Friday Play It, NACOS, PowerPoint Friday, and SEEESS Event. Date and folder filters distinguish collections, including MIWS August, camp graduation, and Demo Day July and September. Five Streamable videos are mixed among the photos in the default album view. Progressive browsing and a keyboard-accessible photo viewer keep larger collections manageable. Photos and smaller grid previews are self-hosted as WebP files.
+One-page Next.js App Router gallery using the supplied RIL Media kit. Includes 633 unique photos across MIWS, Kids Summer Camp, KCC, Hack and Chill, Demo Day, Friday Play It, NACOS, PowerPoint Friday, and SEEESS Event. Date and folder filters distinguish collections, including MIWS August, camp graduation, and Demo Day July and September. Five Streamable videos are mixed among the photos in the default album view. Progressive browsing and a keyboard-accessible photo viewer keep larger collections manageable. Photos and smaller grid previews are self-hosted as WebP files.
 
 ## Preview
 

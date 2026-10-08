@@ -12,7 +12,7 @@ Next.js and TypeScript, explicitly requested by the user. Static export.
 A single page presenting Renaissance Innovation Labs' community photographs. The user confirmed that people and photographs should lead the redesign.
 
 ## Capabilities and Constraints
-Keep the nine distinct albums: MIWS, Kids Summer Camp, KCC, Hack and Chill, Demo Day, Friday Play It, NACOS, PowerPoint Friday, and SEEESS Event. Preserve supplied photographs, original source links, and keyboard-accessible enlarged viewing. The gallery contains 634 unique photos and five embedded videos. Collections filter by verified month or original folder grouping; browsing loads progressively. Videos appear among photos in the default album view. Album navigation scrolls horizontally to accommodate the expanded set. Keep source code organized into app, gallery components, UI components, and data.
+Keep the nine distinct albums: MIWS, Kids Summer Camp, KCC, Hack and Chill, Demo Day, Friday Play It, NACOS, PowerPoint Friday, and SEEESS Event. Preserve supplied photographs, original source links, and keyboard-accessible enlarged viewing. The gallery contains 633 unique photos and five embedded videos. Collections filter by verified month or original folder grouping; browsing loads progressively. Videos appear among photos in the default album view. Album navigation scrolls horizontally to accommodate the expanded set. Keep source code organized into app, gallery components, UI components, and data.
 
 ## Brand Commitments
 Use the supplied RIL media kit: Open Sans, primary blue #177AE5, charcoal #212120, white, and the original horizontal logo without decorative modifications.

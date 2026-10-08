@@ -2,7 +2,7 @@
   "imported": 205,
   "duplicatesReused": 7,
   "originals": 13,
-  "totalUnique": 634,
+  "totalUnique": 633,
   "sources": [
     {
       "album": "hack",
@@ -10048,5 +10048,8 @@
         "file": "miws-june-001"
       }
     ]
-  }
+  },
+  "excludedFromGallery": [
+    "miws-june-001"
+  ]
 }
