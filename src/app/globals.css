@@ -300,15 +300,6 @@ h3 {
   border: 0;
   background: #151515;
 }
-.video-figure figcaption a {
-  display: block;
-  width: fit-content;
-  padding-block: 8px;
-  text-decoration: underline;
-}
-.video-figure figcaption a:hover {
-  color: var(--blue-ink);
-}
 .photo-button {
   position: relative;
   display: block;

@@ -12,9 +12,6 @@ export function AlbumVideo({ video }: { video: GalleryVideo }) {
       />
       <figcaption>
         {video.title} · Video
-        <a href={`https://streamable.com/${video.id}`} target="_blank" rel="noopener noreferrer">
-          Watch on Streamable
-        </a>
       </figcaption>
     </figure>
   );
